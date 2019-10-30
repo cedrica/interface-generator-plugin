@@ -10,25 +10,25 @@
     <packaging>pom</packaging>
 
     <build>
-
-            <plugins>
-                <plugin>
-                    <groupId>com.volkswagen.didas.core.domain.mandico.ditox</groupId>
-                    <artifactId>interface-generator-maven-plugin</artifactId>
-                    <version>1.0.0</version>
-                    <configuration>
-                        <inputClass>com.volkswagen.didas.core.domain.mandico.ditox.Test</inputClass>
-                        <outputDir>${project.basedir}\IDiToXPropertyTypes.java</outputDir>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <phase>compile</phase>
-                            <goals>
-                                <goal>generate</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-            </plugins>
+        <plugins>
+            <plugin>
+                <groupId>com.volkswagen.didas.core.domain.mandico.ditox</groupId>
+                <artifactId>interface-generator-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <configuration>
+                    <inputClass>com.volkswagen.didas.core.domain.mandico.ditox.Test</inputClass>
+                    <outputDir>${project.basedir}</outputDir>
+                    <outputFileName>IDiToXPropertyTypes.java</outputFileName>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 </project>

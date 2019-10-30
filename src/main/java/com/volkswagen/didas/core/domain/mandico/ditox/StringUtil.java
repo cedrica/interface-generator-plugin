@@ -8,26 +8,32 @@ import java.lang.reflect.Field;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class StringUtil {
+class StringUtil {
+
 	private static final Log log = new SystemStreamLog();
-	public static String changeFirstCharakterToUpperCase(String fieldName){
+
+	private StringUtil(){}
+
+	static String changeFirstCharakterToUpperCase(String fieldName){
 		if(fieldName == null || fieldName.isEmpty())
 			return null;
 		return String.join("",String.valueOf(Character.toUpperCase(fieldName.charAt(0))), fieldName.substring(1));
 	}
 
-	public static void writeDataToOutput(String data, String outputDir) {
-		log.info("outputDir: " + outputDir);
+	static void writeDataToOutput(String data, String outputDir, String outputFileName) {
+		log.info("outputDir: " + outputDir + " outputName: "+ outputFileName);
 		try{
-			Files.createFile(Paths.get(outputDir));
-			FileUtils.fileWrite(outputDir,data);
+			Files.createDirectories(Paths.get(outputDir));
+			if(!FileUtils.fileExists(outputDir+"\\"+outputFileName)){
+				Files.createFile(Paths.get(outputDir+"\\"+outputFileName));
+			}
+			FileUtils.fileWrite(outputDir+"\\"+outputFileName,data);
 		} catch (Exception e){
 			log.error(e.getMessage());
 		}
 	}
 
-
-	public static  String convertClassIntoInterfaceStr(Class inputClazz) {
+	static  String convertClassIntoInterfaceStr(Class inputClazz) {
 		log.info("input: " + inputClazz);
 		Field[] fields = inputClazz.getDeclaredFields();
 		StringBuilder data = new StringBuilder().append("package ").append(inputClazz.getPackage().getName()).append(";\n").append("import java.util.List;\n")

@@ -1,26 +1,22 @@
 package com.volkswagen.didas.core.domain.mandico.ditox;
 
-import org.apache.maven.plugin.logging.Log;
-import org.apache.maven.plugin.logging.SystemStreamLog;
 import org.codehaus.plexus.util.FileUtils;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-
 import java.io.IOException;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class StringUtilTest {
 
+	private static final String USER_DIR = "user.dir";
 	@Test public void changeFirstCharakterToUpperCase() {
 		Assert.assertEquals("IchBinDoff",StringUtil.changeFirstCharakterToUpperCase("ichBinDoff"));
 	}
 
 	@Test public void writeDataToOutput() throws IOException {
-		StringUtil.writeDataToOutput("test", System.getProperty("user.dir")+"\\test.java");
-		Assert.assertTrue(FileUtils.fileExists(System.getProperty("user.dir")+"\\test.java"));
-		String content = FileUtils.fileRead(System.getProperty("user.dir")+"\\test.java");
+		StringUtil.writeDataToOutput("test", System.getProperty(USER_DIR),"test.java");
+		Assert.assertTrue(FileUtils.fileExists(System.getProperty(USER_DIR)+"\\test.java"));
+		String content = FileUtils.fileRead(System.getProperty(USER_DIR)+"\\test.java");
 		assertEquals("test", content);
 	}
 
@@ -34,5 +30,21 @@ public class StringUtilTest {
 	class TestForTest{
 		private int age;
 		private String name;
+
+		public int getAge() {
+			return age;
+		}
+
+		public void setAge(int age) {
+			this.age = age;
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
 	}
 }
