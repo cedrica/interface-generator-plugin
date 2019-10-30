@@ -4,10 +4,45 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.volkswagen.didas.core.domain.mandico.ditox</groupId>
+    <groupId>com.volkswagen.ditox</groupId>
     <artifactId>interface-generator-maven-plugin</artifactId>
     <version>1.0.0</version>
     <packaging>maven-plugin</packaging>
+
+    <properties>
+        <artifactory.url>http://jenkins:10000/artifactory</artifactory.url>
+    </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <url>${artifactory.url}/libs-release-local</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>${artifactory.url}/libs-snapshot-local</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>central</id>
+            <name>libs-release</name>
+            <url>${artifactory.url}/libs-release</url>
+        </repository>
+        <repository>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>snapshots</id>
+            <name>libs-snapshot</name>
+            <url>${artifactory.url}/libs-snapshot</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.maven.plugin-tools</groupId>
