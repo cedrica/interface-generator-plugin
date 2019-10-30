@@ -45,8 +45,8 @@ class StringUtil {
 			}
 			Class typeClass = field.getType();
 			String typeStr = typeClass.getSimpleName();
-			data.append("\tpublic void").append(" set").append(StringUtil.changeFirstCharakterToUpperCase(fieldName)).append("(").append(typeStr).append(" ")
-					.append(fieldName).append(");\n");
+			data.append("\tpublic void").append(" set").append(StringUtil.changeFirstCharakterToUpperCase(fieldName)).append("(").append(typeStr).append(" ").append(fieldName).append(");\n")
+				.append("\tpublic ").append(typeStr).append(" get").append(StringUtil.changeFirstCharakterToUpperCase(fieldName)).append("();\n");
 		}
 		data.append("}");
 		return data.toString();
