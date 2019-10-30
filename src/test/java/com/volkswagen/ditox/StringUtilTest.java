@@ -21,7 +21,7 @@ public class StringUtilTest {
 	}
 
 	@Test public void convertClassIntoInterfaceStr() {
-		String expected = "package com.volkswagen.didas.core.domain.mandico.ditox;\nimport java.util.List;\npublic interface IDiToXPropertyTypes {\n\t"
+		String expected = "package com.volkswagen.ditox;\nimport java.util.List;\npublic interface IDiToXPropertyTypes {\n\t"
 				+ "public void setAge(int age);\n\tpublic int getAge();\n\tpublic void setName(String name);\n\tpublic String getName();\n}";
 		String actual = StringUtil.convertClassIntoInterfaceStr(TestForTest.class);
 		Assert.assertEquals(expected,actual);
