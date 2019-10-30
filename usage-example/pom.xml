@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.volkswagen.didas.core.domain.mandico.ditox</groupId>
+    <groupId>com.volkswagen.ditox</groupId>
     <artifactId>usage-example</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
@@ -12,11 +12,11 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>com.volkswagen.didas.core.domain.mandico.ditox</groupId>
+                <groupId>com.volkswagen.ditox</groupId>
                 <artifactId>interface-generator-maven-plugin</artifactId>
                 <version>1.0.0</version>
                 <configuration>
-                    <inputClass>com.volkswagen.didas.core.domain.mandico.ditox.Test</inputClass>
+                    <inputClass>Test</inputClass>
                     <outputDir>${project.basedir}</outputDir>
                     <outputFileName>IDiToXPropertyTypes.java</outputFileName>
                 </configuration>

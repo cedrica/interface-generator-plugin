@@ -1,4 +1,4 @@
-package com.volkswagen.didas.core.domain.mandico.ditox;
+package com.volkswagen.ditox;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugins.annotations.LifecyclePhase;

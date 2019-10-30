@@ -1,4 +1,4 @@
-package com.volkswagen.didas.core.domain.mandico.ditox;
+package com.volkswagen.ditox;
 
 import org.codehaus.plexus.util.FileUtils;
 import org.junit.Assert;
