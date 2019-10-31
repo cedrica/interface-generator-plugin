@@ -21,7 +21,6 @@ class StringUtil {
 	}
 
 	static void writeDataToOutput(String data, String outputDir, String outputFileName) {
-		log.info("outputDir: " + outputDir + " outputName: "+ outputFileName);
 		try{
 			Files.createDirectories(Paths.get(outputDir));
 			if(!FileUtils.fileExists(outputDir+"\\"+outputFileName)){
