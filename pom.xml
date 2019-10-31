@@ -44,6 +44,7 @@
     </repositories>
 
     <dependencies>
+        <!--plugin to program and run plugin-->
         <dependency>
             <groupId>org.apache.maven.plugin-tools</groupId>
             <artifactId>maven-plugin-annotations</artifactId>
@@ -55,12 +56,14 @@
             <artifactId>maven-plugin-api</artifactId>
             <version>3.6.2</version>
         </dependency>
+        <!--JUnit-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <!-- Mockito and PowerMock -->
         <dependency>
             <groupId>org.powermock</groupId>
             <artifactId>powermock-module-junit4</artifactId>
@@ -100,4 +103,29 @@
             </plugin>
         </plugins>
     </build>
+    <organization>
+        <name>Example Inc</name>
+        <url>https://google.com/search?q=example.com</url>
+    </organization>
+    <!-- The lowest version you schould use is maven 3.5-->
+    <prerequisites>
+        <maven>3.5.0</maven>
+    </prerequisites>
+    <!-- report configuration for the plugin. just run : mvn site to generate the html report -->
+    <reporting>
+        <plugins>
+            <plugin>
+                <artifactId>maven-plugin-plugin</artifactId>
+                <version>3.6.0</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>

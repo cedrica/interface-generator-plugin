@@ -7,12 +7,22 @@ import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 
 /**
+ * This plugin is used to generate interface from class
  * @author Cedric Leumaleu
  */
 @Mojo(name = "generate", defaultPhase = LifecyclePhase.COMPILE)
 public class InterfaceGeneratorMojo extends AbstractMojo {
+	/**
+	 * The output directory of the generated interface
+	 */
 	@Parameter(required = true) private String outputDir;
+	/**
+	 * the output filename
+	 */
 	@Parameter(required = true) private String outputFileName;
+	/**
+	 * the class to be convert into interface
+	 */
 	@Parameter(required = true) private String inputClass;
 
 	@Override
